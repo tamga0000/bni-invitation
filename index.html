@@ -939,11 +939,11 @@
     <div class="meeting-number-badge reveal">
       <div class="meeting-num-card">
         <div class="meeting-num-circle">
-          <span class="meeting-num-number">93</span>
+          <span class="meeting-num-number" id="meeting-num">93</span>
         </div>
         <div>
           <div class="meeting-num-label">Buổi họp số</div>
-          <div class="meeting-num-desc">Sự Kiện Kết Nối – Lần thứ 93</div>
+          <div class="meeting-num-desc" id="meeting-desc">Sự Kiện Kết Nối – Lần thứ 93</div>
         </div>
       </div>
     </div>
@@ -1237,6 +1237,18 @@
       }
 
       const targetDateObj = getNextWednesday();
+
+      // Cập nhật số thứ tự sự kiện tự động
+      const baseDate = new Date(2026, 3, 1, 6, 30, 0, 0); // Ngày 1 tháng 4 năm 2026 (Buổi 94)
+      const diffWeeks = Math.round((targetDateObj.getTime() - baseDate.getTime()) / (7 * 24 * 60 * 60 * 1000));
+      const meetingNumber = 94 + diffWeeks;
+
+      const numSpan = document.getElementById('meeting-num');
+      if (numSpan) numSpan.textContent = meetingNumber;
+
+      const descDiv = document.getElementById('meeting-desc');
+      if (descDiv) descDiv.textContent = 'Sự Kiện Kết Nối – Lần thứ ' + meetingNumber;
+
       updateEventDateUI(targetDateObj);
 
       function pad(n) { return String(n).padStart(2, '0'); }
