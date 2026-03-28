@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thư Mời – Cộng Đồng | Kết Nối Doanh Nhân</title>
+  <meta name="description" content="Kính mời Anh/Chị tham dự buổi họp định kỳ của Cộng Đồng Doanh Nhân – Sự kiện Kết Nối Kinh Doanh ngày 11/03/2026 tại AQUA JARDIN, TP. Hồ Chí Minh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet" />
+  
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* ===== RESET & ROOT ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --red: #CC1D1D;
+      --red-dark: #A31515;
+      --red-light: #E83535;
+      --white: #FFFFFF;
+      --cream: #FFF8F8;
+      --gray: #5E6472;
+      --gray-light: #F5F5F5;
+      --text: #1A1A2E;
+      --shadow: 0 8px 32px rgba(204,29,29,0.12);
+      --radius: 16px;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== DECORATIVE BORDER LINES ===== */
+    .border-line {
+      position: fixed;
+      top: 0; bottom: 0;
+      width: 6px;
+      background: linear-gradient(to bottom, var(--red), var(--red-dark), var(--red));
+      z-index: 100;
+    }
+    .border-line.left { left: 0; }
+    .border-line.right { right: 0; }
+
+    /* ===== FLOATING PARTICLES ===== */
+    .particles-container {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      opacity: 0.08;
+      animation: floatParticle linear infinite;
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.08; }
+      90% { opacity: 0.08; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    /* ===== WELCOME GATE (LANDING FORM) ===== */
+    .welcome-gate {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: linear-gradient(135deg, var(--red-dark), #6B0000);
+      z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      overflow-y: auto;
+      padding: 40px 20px;
+      transition: opacity 0.5s ease;
+    }
+    .welcome-content {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+      animation: gatePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    @keyframes gatePop {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .welcome-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1.3;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .welcome-subtitle {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .welcome-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .welcome-form .form-label {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: -10px;
+      text-align: left;
+    }
+    .welcome-form .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: var(--gray-light);
+      color: var(--text);
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    .welcome-form .form-input:focus {
+      border-color: var(--red);
+      background: var(--white);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(204,29,29,0.1);
+    }
+    .welcome-form .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--red);
+      color: var(--white);
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.3s;
+    }
+    .welcome-form .submit-btn:hover { background: var(--red-dark); }
+
+    /* ===== WRAPPER ===== */
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(160deg, #1a0000 0%, #8B0000 40%, var(--red) 100%);
+      color: var(--white);
+      padding: 60px 32px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.6;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    /* BNI Logo SVG-style */
+    .bni-logo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .bni-logo-badge {
+      background: var(--white);
+      padding: 14px 24px 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .bni-text {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -2px;
+      line-height: 1;
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
+    .bni-text span {
+      display: inline-block;
+      transform: skewX(-8deg);
+    }
+    .best-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gray);
+      letter-spacing: 8px;
+      margin-top: 4px;
+    }
+    .meeting-badge {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-top: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-label {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title {
+      font-size: clamp(28px, 7vw, 40px);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 1px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .hero-subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 50px;
+      padding: 10px 24px;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-date-pill .dot {
+      width: 8px; height: 8px;
+      background: #FFD700;
+      border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.6; }
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 48px 28px;
+      position: relative;
+    }
+    .section-inner {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--red), var(--red-dark));
+      border-radius: 4px 0 0 4px;
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .section-heading {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    /* ===== COUNTDOWN ===== */
+    .countdown-section {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      padding: 40px 28px;
+      text-align: center;
+      color: var(--white);
+    }
+    .countdown-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+    }
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      text-align: center;
+      min-width: 72px;
+    }
+    .countdown-value {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 14px 10px 10px;
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1;
+      backdrop-filter: blur(4px);
+      min-width: 72px;
+      display: block;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-unit {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 8px;
+      text-transform: uppercase;
+    }
+    .countdown-expired {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFD700;
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefit-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(204,29,29,0.3);
+    }
+    .benefit-text {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #444;
+      padding-top: 10px;
+    }
+    .benefit-text strong { color: var(--text); }
+
+    /* ===== EVENT INFO ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+    .info-divider {
+      background: linear-gradient(to bottom, transparent, #ddd, transparent);
+      width: 1px;
+    }
+    .info-col {
+      padding: 8px 16px;
+      text-align: center;
+    }
+    .info-col-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .info-col-main {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .info-col-sub {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      animation: heartbeat 2s ease-in-out infinite;
+    }
+    .map-btn:hover {
+      background: var(--red-dark);
+      transform: scale(1.05);
+      animation: none;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.06); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.04); }
+      70% { transform: scale(1); }
+    }
+
+    /* ===== CALENDAR ===== */
+    .calendar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .calendar {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 320px;
+    }
+    .cal-header {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 12px;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+    .cal-days-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      background: var(--red-dark);
+    }
+    .cal-day-name {
+      color: rgba(255,255,255,0.8);
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      padding: 6px 0;
+    }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      background: var(--white);
+    }
+    .cal-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: #444;
+      position: relative;
+    }
+    .cal-cell.empty { color: #ccc; font-size: 11px; }
+    .cal-cell.highlight {
+      background: var(--red);
+      color: var(--white);
+      font-weight: 900;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      animation: calPulse 2s ease-in-out infinite;
+    }
+    @keyframes calPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(204,29,29,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(204,29,29,0); }
+    }
+    .cal-cell.weekend { color: var(--red); }
+    .cal-cell.highlight.weekend { color: var(--white); }
+    /* Ngày hôm nay (nếu không phải thứ 4) */
+    .cal-cell.today:not(.highlight) {
+      border: 2px solid #FFD700;
+      border-radius: 50%;
+      color: var(--red);
+      font-weight: 800;
+    }
+    /* Ngày hôm nay và là thứ 4 */
+    .cal-cell.today.highlight {
+      box-shadow: 0 0 0 3px #FFD700, 0 0 0 6px rgba(255,215,0,0.3);
+    }
+
+    /* ===== SCHEDULE ===== */
+    .schedule-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .schedule-item {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+    .schedule-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 56px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #ddd, transparent);
+    }
+    .schedule-time {
+      min-width: 80px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red);
+      padding: 16px 12px 16px 0;
+      text-align: right;
+    }
+    .schedule-dot {
+      flex-shrink: 0;
+      width: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+    .schedule-dot::before {
+      content: '';
+      width: 12px; height: 12px;
+      background: var(--red);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 3px rgba(204,29,29,0.2);
+      flex-shrink: 0;
+    }
+    .schedule-content {
+      flex: 1;
+      padding: 12px 0 16px 16px;
+    }
+    .schedule-phase {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .schedule-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .schedule-items li {
+      font-size: 13px;
+      color: var(--gray);
+      padding-left: 16px;
+      position: relative;
+    }
+    .schedule-items li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* ===== NOTES ===== */
+    .notes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .note-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--gray-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--red);
+    }
+    .note-emoji {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .note-text {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .note-text strong {
+      color: var(--red);
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-card {
+      background: linear-gradient(135deg, var(--cream), #fff0f0);
+      border-radius: 12px;
+      padding: 18px 20px;
+      border: 1px solid rgba(204,29,29,0.15);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      transition: var(--transition);
+    }
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(204,29,29,0.12);
+    }
+    .contact-avatar {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .contact-role {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 2px;
+    }
+    .contact-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .contact-phone {
+      font-size: 13px;
+      color: var(--gray);
+    }
+    .contact-phone a {
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ===== PHOTO GALLERY ===== */
+    .gallery-grid {
+      column-count: 2;
+      column-gap: 12px;
+      margin-top: 16px;
+    }
+    @media (min-width: 500px) {
+      .gallery-grid { column-count: 3; }
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item::after {
+      content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+      background: rgba(204,29,29,0.1); opacity: 0; transition: var(--transition);
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(204,29,29,0.2);
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: var(--transition);
+      height: auto;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1a0000;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 36px 28px;
+    }
+    .footer-logo {
+      margin-bottom: 16px;
+    }
+    .footer-bni {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: -1px;
+    }
+    .footer-best {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 6px;
+    }
+    .footer-divider {
+      width: 40px; height: 2px;
+      background: var(--red);
+      margin: 16px auto;
+      border-radius: 2px;
+    }
+    .footer-text {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .footer-copy {
+      margin-top: 24px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ===== SECTION NUMBER ===== */
+    .meeting-number-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      padding: 0 28px;
+      margin-top: -20px;
+      position: relative;
+      z-index: 2;
+    }
+    .meeting-num-card {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(204,29,29,0.15);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+    .meeting-num-circle {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(204,29,29,0.3);
+    }
+    .meeting-num-number {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .meeting-num-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 2px;
+    }
+    .meeting-num-desc { font-size: 14px; font-weight: 600; color: var(--text); }
+
+    /* ===== REVEAL ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .hero { padding: 48px 20px 72px; }
+      .section { padding: 32px 16px; }
+      .section-inner { padding: 28px 20px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-divider { display: none; }
+      .info-col { padding: 16px; border-bottom: 1px solid #eee; }
+      .info-col:last-child { border-bottom: none; }
+      .countdown-value { font-size: 28px; min-width: 60px; }
+      .schedule-time { min-width: 68px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== WELCOME GATE ===== -->
+  <div id="welcome-gate" class="welcome-gate">
+    <div class="welcome-content">
+      <h1 class="welcome-title">Sự kiện kết nối doanh nhân tại TP.HCM</h1>
+      <p class="welcome-subtitle">Nơi bạn đến để <strong>TĂNG DOANH THU</strong>, <strong>MỞ RỘNG QUAN HỆ</strong> và <strong>BỨT PHÁ</strong> kinh doanh ngay lập tức!</p>
+      
+      <form id="landing-form" class="welcome-form">
+        <label class="form-label">Họ và tên *</label>
+        <input type="text" id="lf-name" class="form-input" placeholder="Nguyễn Văn A" required>
+        
+        <label class="form-label">Số điện thoại *</label>
+        <input type="tel" id="lf-phone" class="form-input" placeholder="0900 000 000" required>
+        
+        <label class="form-label">Email *(Điền đúng để nhận thư mời)</label>
+        <input type="email" id="lf-email" class="form-input" placeholder="email@congty.com" required>
+        
+        <label class="form-label">Tên doanh nghiệp</label>
+        <input type="text" id="lf-company" class="form-input" placeholder="Tên công ty của bạn">
+        
+        <label class="form-label">Hình ảnh đại diện (Tải lên) *</label>
+        <input type="file" id="lf-photo" class="form-input" accept="image/*" required style="padding-top:10px;">
+        
+        <button type="submit" id="lf-submit-btn" class="submit-btn">ĐĂNG KÝ THAM DỰ →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Decorative border lines -->
+  <div class="border-line left"></div>
+  <div class="border-line right"></div>
+
+  <!-- Floating particles -->
+  <div class="particles-container" id="particles"></div>
+
+  <div class="wrapper">
+
+    <!-- ===== PERSONALIZED HERO ===== -->
+    <div id="personalized-hero" style="display:none; text-align:center; padding: 60px 24px 40px; background:var(--white); position:relative; z-index:2; border-bottom:4px solid var(--red-light); border-radius: 0 0 24px 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: -20px;">
+      <img id="ph-photo" src="" style="width:130px; height:130px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:5px solid var(--red-light); box-shadow:0 12px 28px rgba(204,29,29,0.3);">
+      <h2 style="font-size:26px; font-weight:900; color:var(--text); margin-bottom:10px; line-height:1.2;">Cảm ơn Anh/Chị <br><span id="ph-name" style="color:var(--red);"></span>!</h2>
+      <p style="font-size:15px; color:var(--gray); line-height:1.6; max-width:80%; margin:0 auto;">Chào mừng đại diện từ <strong id="ph-company" style="color:var(--text);"></strong> đến với sự kiện.<br>Thư mời chi tiết sẽ được tự động gửi tới email: <strong id="ph-email" style="color:var(--red);"></strong> của Anh/Chị.</p>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="bni-logo" style="margin-bottom: 30px;">
+        <div class="meeting-badge" style="font-size: 16px; padding: 8px 24px; border: 2px solid rgba(255,255,255,0.5);">SỰ KIỆN KẾT NỐI DOANH NHÂN</div>
+      </div>
+
+      <p class="hero-label">Thư Mời</p>
+      <h1 class="hero-title">KẾT NỐI<br>KINH DOANH</h1>
+      <p class="hero-subtitle">
+        Kính mời Anh/Chị tham dự buổi họp định kỳ<br>
+        của <strong style="color:#FFD700">Cộng Đồng Doanh Nhân</strong>
+      </p>
+      <div class="hero-date-pill" id="hero-date-pill">
+        <span class="dot"></span>
+        Đang tải...
+      </div>
+    </section>
+
+    <!-- ===== MEETING NUMBER BADGE ===== -->
+    <div class="meeting-number-badge reveal">
+      <div class="meeting-num-card">
+        <div class="meeting-num-circle">
+          <span class="meeting-num-number">93</span>
+        </div>
+        <div>
+          <div class="meeting-num-label">Buổi họp số</div>
+          <div class="meeting-num-desc">Sự Kiện Kết Nối – Lần thứ 93</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COUNTDOWN ===== -->
+    <div class="countdown-section reveal">
+      <p class="countdown-label">⏱ Sự kiện diễn ra sau</p>
+      <div class="countdown-grid" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-value" id="cd-days">00</span>
+          <div class="countdown-unit">Ngày</div>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="cd-hours">00</span>
+          <div class="countdown-unit">Giờ</div>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="cd-mins">00</span>
+          <div class="countdown-unit">Phút</div>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-value" id="cd-secs">00</span>
+          <div class="countdown-unit">Giây</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BENEFITS ===== -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <p class="section-title">Lợi ích khi tham dự</p>
+        <h2 class="section-heading">Vì sao nên có mặt?</h2>
+        <ul class="benefit-list">
+          <li class="benefit-item">
+            <div class="benefit-icon">🤝</div>
+            <p class="benefit-text"><strong>Kết nối mở rộng</strong> mối quan hệ chất lượng với hơn 70 chủ doanh nghiệp trong và ngoài Chapter.</p>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">📢</div>
+            <p class="benefit-text"><strong>Cơ hội quảng bá</strong> về ngành nghề kinh doanh của doanh nghiệp mình đến đúng đối tượng.</p>
+          </li>
+          <li class="benefit-item">
+            <div class="benefit-icon">📈</div>
+            <p class="benefit-text"><strong>Gia tăng doanh số</strong> thông qua các mô hình marketing trực tiếp hiệu quả, đã được kiểm chứng.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== EVENT INFO ===== -->
+    <section class="section reveal" style="padding-top:0">
+      <div class="section-inner">
+        <p class="section-title">Chi tiết sự kiện</p>
+        <h2 class="section-heading">Thời gian & Địa điểm</h2>
+        <div class="info-grid">
+          <div class="info-col">
+            <div class="info-col-title">
+              <span>🕐</span> Thời gian
+            </div>
+            <div class="info-col-main">06:30 – 09:00</div>
+            <div class="info-col-sub" id="event-date-display">Đang tải...</div>
+          </div>
+          <div class="info-divider"></div>
+          <div class="info-col">
+            <div class="info-col-title">
+              <span>📍</span> Địa điểm
+            </div>
+            <div class="info-col-main">AQUA JARDIN</div>
+            <div class="info-col-sub">307 Nơ Trang Long, P. Bình Lợi Trung, Tp. Hồ Chí Minh</div>
+            <a
+              id="map-btn"
+              class="map-btn"
+              href="https://maps.google.com/?q=307+No+Trang+Long+Binh+Loi+Trung+Ho+Chi+Minh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🗺️ Xem Chỉ Đường
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALENDAR ===== -->
+    <section class="section reveal" style="padding-top:0">
+      <div class="section-inner">
+        <p class="section-title">Lịch tháng</p>
+        <h2 class="section-heading" id="cal-section-heading">Đang tải...</h2>
+        <div class="calendar-wrap">
+          <div class="calendar">
+            <div class="cal-header" id="cal-header-title">...</div>
+            <div class="cal-days-header">
+              <div class="cal-day-name">CN</div>
+              <div class="cal-day-name">T2</div>
+              <div class="cal-day-name">T3</div>
+              <div class="cal-day-name">T4</div>
+              <div class="cal-day-name">T5</div>
+              <div class="cal-day-name">T6</div>
+              <div class="cal-day-name">T7</div>
+            </div>
+            <div class="cal-grid" id="cal-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCHEDULE ===== -->
+    <section class="section reveal" style="padding-top:0">
+      <div class="section-inner">
+        <p class="section-title">Chương trình</p>
+        <h2 class="section-heading">Lịch trình sự kiện</h2>
+        <ul class="schedule-list">
+          <li class="schedule-item">
+            <div class="schedule-time">06:30<br>07:00</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">☕ Cà Phê Kết Nối</div>
+              <ul class="schedule-items">
+                <li>Giao lưu cà phê – Kết nối doanh nhân</li>
+              </ul>
+            </div>
+          </li>
+          <li class="schedule-item">
+            <div class="schedule-time">07:00<br>08:45</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">💼 Phiên Chính</div>
+              <ul class="schedule-items">
+                <li>Chia sẻ kỹ năng xây dựng mối quan hệ kinh doanh</li>
+                <li>Giới thiệu doanh nghiệp – Các thành viên & khách mời chia sẻ về lĩnh vực kinh doanh</li>
+                <li>Bài thuyết trình chính – Feature Presentation</li>
+                <li>Bài đào tạo 5 phút</li>
+              </ul>
+            </div>
+          </li>
+          <li class="schedule-item">
+            <div class="schedule-time">08:45<br>09:00</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">🤝 Kết Thúc & Giao Lưu</div>
+              <ul class="schedule-items">
+                <li>Kết thúc và giao lưu cùng các doanh nhân</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PHOTO GALLERY ===== -->
+    <section class="section reveal" style="padding-top:0">
+      <div class="section-inner">
+        <p class="section-title">Khoảnh khắc Sự kiện</p>
+        <h2 class="section-heading">Hoạt động Chapter</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="assets/images/IMG_5182.JPG" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/_DSC5117.jpeg" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/_DSC5331.jpeg" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/_DSC5144.jpeg" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/_DSC5145.jpeg" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/IMG_5177.JPG" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/_DSC5354.jpeg" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/DSC06709.jpg" alt="Khoảnh khắc" loading="lazy"></div>
+          <div class="gallery-item"><img src="assets/images/_DSC5388.jpeg" alt="Khoảnh khắc" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOTES ===== -->
+    <section class="section reveal" style="padding-top:0">
+      <div class="section-inner">
+        <p class="section-title">Thông tin quan trọng</p>
+        <h2 class="section-heading">Lưu ý khi tham dự</h2>
+        <div class="notes-grid">
+          <div class="note-item">
+            <span class="note-emoji">👔</span>
+            <div class="note-text">
+              <strong>Trang phục</strong>
+              Khách mời mặc trang phục doanh nhân trang trọng, lịch sự.
+            </div>
+          </div>
+          <div class="note-item">
+            <span class="note-emoji">⏰</span>
+            <div class="note-text">
+              <strong>Đúng giờ</strong>
+              Có mặt trước 06:30 để tham gia cà phê kết nối doanh nhân.
+            </div>
+          </div>
+          <div class="note-item">
+            <span class="note-emoji">🪪</span>
+            <div class="note-text">
+              <strong>Danh thiếp</strong>
+              Mang theo danh thiếp để trao đổi thông tin với doanh nhân.
+            </div>
+          </div>
+          <div class="note-item">
+            <span class="note-emoji">💰</span>
+            <div class="note-text">
+              <strong>Phí tham dự</strong>
+              Phí chia sẻ phòng họp và ăn sáng: <strong style="color:var(--red)">300.000 VNĐ</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section reveal" style="padding-top:0">
+      <div class="section-inner">
+        <p class="section-title">Đăng ký & Thắc mắc</p>
+        <h2 class="section-heading">Liên hệ với chúng tôi</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-avatar">👩</div>
+            <div>
+              <div class="contact-role">Ban Khách Mời</div>
+              <div class="contact-name">Hoàng Thị Thúy Linh</div>
+              <div class="contact-phone">📞 <a href="tel:0985508979">0985.508.979</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-avatar">👩‍💼</div>
+            <div>
+              <div class="contact-role">Tổng Thư Ký</div>
+              <div class="contact-name">Nguyễn Thị Hiền</div>
+              <div class="contact-phone">📞 <a href="tel:0976900494">0976.900.494</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <div class="footer-bni" style="font-size: 24px;">KẾT NỐI</div>
+        <div class="footer-best">DOANH NHÂN</div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-text">
+        Rất hân hạnh được đón tiếp Anh/Chị!<br>
+        <span style="color:rgba(255,255,255,0.4); font-size:13px;">Cộng Đồng Kết Nối Doanh Nhân</span>
+      </p>
+      <p class="footer-copy">© 2026 Cộng Đồng Doanh Nhân. Mọi quyền được bảo lưu.</p>
+    </footer>
+
+  </div><!-- end .wrapper -->
+
+  <script>
+    // ===== PARTICLES =====
+    (function() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 15; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.width = p.style.height = (Math.random() * 8 + 4) + 'px';
+        p.style.animationDuration = (Math.random() * 20 + 15) + 's';
+        p.style.animationDelay = (Math.random() * 15) + 's';
+        container.appendChild(p);
+      }
+    })();
+
+    // ===== COUNTDOWN & EVENT DATE =====
+    (function() {
+      function getNextWednesday() {
+        // Build: next Wednesday 06:30 VN
+        const wednesdayVN = new Date();
+        const diffDays = (3 - new Date().getDay() + 7) % 7 || (new Date().getHours() < 6 || (new Date().getHours() === 6 && new Date().getMinutes() < 30) ? 0 : 7);
+        wednesdayVN.setDate(new Date().getDate() + diffDays);
+        wednesdayVN.setHours(6, 30, 0, 0);
+        return wednesdayVN;
+      }
+
+      function updateEventDateUI(targetDate) {
+        const dd = String(targetDate.getDate()).padStart(2, '0');
+        const mm = String(targetDate.getMonth() + 1).padStart(2, '0');
+        const yyyy = targetDate.getFullYear();
+        
+        const heroPill = document.getElementById('hero-date-pill');
+        if (heroPill) {
+          heroPill.innerHTML = '<span class="dot"></span>Thứ Tư • ' + dd + ' tháng ' + mm + ' năm ' + yyyy + ' • 06:30–09:00';
+        }
+
+        const detailSub = document.getElementById('event-date-display');
+        if (detailSub) {
+          detailSub.innerHTML = 'Thứ Tư<br>Ngày ' + dd + ' tháng ' + mm + ' năm ' + yyyy;
+        }
+      }
+
+      const targetDateObj = getNextWednesday();
+      updateEventDateUI(targetDateObj);
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function update() {
+        const diff = targetDateObj.getTime() - Date.now();
+        if (diff <= 0 && diff > -3600000 * 2.5) {
+          // Đang trong buổi họp (từ 06:30 đến ~09:00)
+          document.getElementById('countdown').innerHTML = '<p class="countdown-expired">🎉 Buổi họp đang diễn ra!</p>';
+          return;
+        }
+        if (diff <= -3600000 * 2.5) {
+          // Nếu đã qua buổi họp, reload trang để lấy thứ 4 tiếp theo
+          window.location.reload();
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        
+        const cdDays = document.getElementById('cd-days');
+        if(cdDays) {
+          cdDays.textContent = pad(d);
+          document.getElementById('cd-hours').textContent = pad(h);
+          document.getElementById('cd-mins').textContent = pad(m);
+          document.getElementById('cd-secs').textContent = pad(s);
+        }
+      }
+      update();
+      setInterval(update, 1000);
+    })();
+
+    // ===== CALENDAR – tự động theo tháng hiện tại, đánh dấu TẤT CẢ thứ 4 =====
+    (function() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth(); // 0-indexed
+      const today = now.getDate();
+
+      const monthNames = [
+        'THÁNG 01','THÁNG 02','THÁNG 03','THÁNG 04',
+        'THÁNG 05','THÁNG 06','THÁNG 07','THÁNG 08',
+        'THÁNG 09','THÁNG 10','THÁNG 11','THÁNG 12'
+      ];
+
+      // Cập nhật tiêu đề
+      document.getElementById('cal-section-heading').textContent =
+        'Tháng ' + String(month + 1).padStart(2,'0') + ' / ' + year;
+      document.getElementById('cal-header-title').textContent =
+        monthNames[month] + ' NĂM ' + year;
+
+      const grid = document.getElementById('cal-grid');
+      const firstDay = new Date(year, month, 1).getDay(); // 0=CN
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const weekends = [0, 6];
+
+      // Ô trống đầu tháng
+      for (let i = 0; i < firstDay; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'cal-cell empty';
+        grid.appendChild(cell);
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const cell = document.createElement('div');
+        const colIndex = (firstDay + d - 1) % 7;
+        let cls = 'cal-cell';
+        if (weekends.includes(colIndex)) cls += ' weekend';
+        // Đánh dấu Thứ 4 (colIndex = 3, tức Wednesday)
+        if (colIndex === 3) cls += ' highlight';
+        // Đánh dấu ngày hôm nay
+        if (d === today) cls += ' today';
+        cell.className = cls;
+        cell.textContent = d;
+        grid.appendChild(cell);
+      }
+    })();
+
+    // ===== REVEAL ON SCROLL =====
+    (function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
+
+
+
+
+    // ===== LANDING FORM & PERSONALIZATION =====
+    document.getElementById('landing-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Tracking sự kiện CompleteRegistration trên FB Pixel
+      if(typeof fbq === 'function') {
+        fbq('track', 'CompleteRegistration');
+      }
+
+      const btn = document.getElementById('lf-submit-btn');
+      btn.textContent = '⏳ ĐANG XỬ LÝ...';
+      btn.disabled = true;
+
+      const name = document.getElementById('lf-name').value.trim();
+      const phone = document.getElementById('lf-phone').value.trim();
+      const email = document.getElementById('lf-email').value.trim();
+      const company = document.getElementById('lf-company').value.trim() || 'Doanh nghiệp của bạn';
+      const fileInput = document.getElementById('lf-photo');
+      const file = fileInput.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          const base64Data = ev.target.result;
+          finishRegistration(name, phone, email, company, base64Data);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        finishRegistration(name, phone, email, company, null);
+      }
+    });
+
+    function finishRegistration(name, phone, email, company, photoBase64) {
+      // 1. Gửi data lên Google Apps Script (Webhook)
+      const dataPayload = { name, phone, email, company, photo: photoBase64 };
+      
+      // >>> ĐÃ TÍCH HỢP WEBHOOK GOOGLE CỦA SẾP BẠN <<<
+      fetch('https://script.google.com/macros/s/AKfycbyAxSNFdzIisxksv0fmemkYqLoAX_naV3GQkbSYuibFRidU5edRFKooTpHKSTmFQf9k/exec', { 
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(dataPayload) 
+      }).then(response => response.json())
+        .then(data => console.log('Thành công:', data))
+        .catch(e => console.log('Lỗi gửi data:', e));
+
+      // 2. Ẩn cổng đăng ký
+      document.getElementById('welcome-gate').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('welcome-gate').style.display = 'none';
+        
+        // 3. Hiển thị khu vực Cá nhân hóa
+        document.getElementById('personalized-hero').style.display = 'block';
+        document.getElementById('ph-name').textContent = name;
+        document.getElementById('ph-company').textContent = company;
+        document.getElementById('ph-email').textContent = email;
+        if(photoBase64) {
+          document.getElementById('ph-photo').src = photoBase64;
+        }
+
+        // Khởi động lại Scroll Reveal vì mới xoá overlay
+        window.scrollTo(0, 0);
+
+        // 4. Báo Toast
+        let t2 = document.getElementById('toast');
+        if(!t2) {
+           t2 = document.createElement('div');
+           t2.id = 'toast'; 
+           t2.className = 'toast';
+           document.body.appendChild(t2);
+        }
+        t2.textContent = '✅ Đăng ký thành công! Vui lòng kiểm tra Email.';
+        t2.classList.add('show');
+        setTimeout(() => t2.classList.remove('show'), 6000);
+      }, 500);
+    }
+  </script>
+</body>
+</html>
