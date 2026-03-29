@@ -138,6 +138,15 @@ new_body = f"""
       font-size: 14px; color: rgba(255,255,255,0.8);
       font-weight: 500;
     }}
+    .ic-motto {{
+      font-size: 13px;
+      line-height: 1.5;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }}
 
     /* ===== LIGHTBOX ===== */
     #lightbox {{
@@ -183,7 +192,7 @@ new_body = f"""
     <!-- ===== INVITATION NAMECARD (hiện sau khi điền form) ===== -->
     <div id="invitation-card">
       <div class="ic-brand">BEST CHAPTER</div>
-      <div class="ic-sub">Kết Nối Doanh Nhân</div>
+      <div class="ic-sub">Cộng đồng chủ doanh nghiệp</div>
       <div class="ic-script">Trân Trọng Kính Mời</div>
       <div class="ic-photo-ring">
         <div class="ic-photo-placeholder" id="ic-photo-placeholder">👤</div>
@@ -191,6 +200,10 @@ new_body = f"""
       </div>
       <div class="ic-name" id="ic-name">NGUYỄN VĂN A</div>
       <div class="ic-company" id="ic-company">Công ty TNHH ABC</div>
+      <div class="ic-motto">
+        Nơi hội tụ những doanh nhân tạo giá trị<br>
+        Kết nối để cùng nhau bứt phá
+      </div>
     </div>
 
     <!-- HERO SECTION -->
@@ -199,15 +212,18 @@ new_body = f"""
         <div class="bni-logo-badge">
           <div class="bni-text" style="font-size: 64px;">BEST <span>CHAPTER</span></div>
         </div>
-        <div class="meeting-badge">KẾT NỐI KINH DOANH</div>
+        <div class="meeting-badge">CỘNG ĐỒNG CHỦ DOANH NGHIỆP TẠI HỒ CHÍ MINH</div>
       </div>
       
-      <div class="hero-label">Kính mời Anh/Chị tham dự</div>
+      <div class="hero-label">Trân trọng Kính mời Anh/Chị tham dự</div>
       <h1 class="hero-title">
         Sự kiện định kỳ 
         <span id="meeting-num" style="display:inline-block; color:#FFD700; font-family:'Playfair Display', serif; font-style:italic; margin-left:8px; font-size: 1.2em;">94</span>
       </h1>
       <p class="hero-subtitle">Mở rộng mối quan hệ và gia tăng doanh số thông qua các cơ hội học hỏi.</p>
+      <div style="font-size: 14px; color: rgba(255,255,255,0.9); margin-top: -20px; margin-bottom: 30px;">
+        📍 AQUA JARDIN - 307 Nơ Trang Long, Bình Lợi Trung, Tp. HCM
+      </div>
       
       <div class="hero-date-pill">
         <div class="dot"></div>
@@ -497,8 +513,8 @@ new_body = f"""
         document.getElementById('welcome-gate').style.display = 'none';
 
         // Điền thông tin vào thẻ mời
-        document.getElementById('ic-name').textContent = name.toUpperCase();
-        document.getElementById('ic-company').textContent = company;
+        document.getElementById('ic-name').textContent = 'Khách mời: ' + name.toUpperCase();
+        document.getElementById('ic-company').textContent = 'Đại diện công ty: ' + company;
 
         if(photoBase64) {{
           document.getElementById('ic-photo-placeholder').style.display = 'none';
