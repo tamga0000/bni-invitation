@@ -182,7 +182,7 @@
     .hero {
       background: linear-gradient(160deg, #1a0000 0%, #8B0000 40%, var(--red) 100%);
       color: var(--white);
-      padding: 60px 32px 80px;
+      padding: 60px 24px 40px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -308,7 +308,7 @@
 
     /* ===== SECTIONS ===== */
     .section {
-      padding: 48px 28px;
+      padding: 24px 20px;
       position: relative;
     }
     .section-inner {
@@ -347,7 +347,7 @@
     /* ===== COUNTDOWN ===== */
     .countdown-section {
       background: linear-gradient(135deg, var(--red-dark), var(--red));
-      padding: 40px 28px;
+      padding: 30px 20px;
       text-align: center;
       color: var(--white);
     }
@@ -877,7 +877,7 @@
   <!-- ===== WELCOME GATE ===== -->
   <div id="welcome-gate" class="welcome-gate">
     <div class="welcome-content">
-      <h1 class="welcome-title">Sự kiện kết nối doanh nhân tại TP.HCM</h1>
+      <h1 class="welcome-title">Sự kiện Kết Nối Doanh Nhân</h1>
       <p class="welcome-subtitle">Nơi bạn đến để <strong>TĂNG DOANH THU</strong>, <strong>MỞ RỘNG QUAN HỆ</strong> và <strong>BỨT PHÁ</strong> kinh doanh ngay lập tức!</p>
       
       <form id="landing-form" class="welcome-form">
@@ -887,18 +887,17 @@
         <label class="form-label">Số điện thoại *</label>
         <input type="tel" id="lf-phone" class="form-input" placeholder="0900 000 000" required>
         
-        <label class="form-label">Email *(Điền đúng để nhận thư mời)</label>
+        <label class="form-label">Email * (Điền đúng để nhận thư mời)</label>
         <input type="email" id="lf-email" class="form-input" placeholder="email@congty.com" required>
         
-        <label class="form-label">Tên doanh nghiệp</label>
-        <input type="text" id="lf-company" class="form-input" placeholder="Tên công ty của bạn">
+        <label class="form-label">Tên Công ty / Doanh nghiệp</label>
+        <input type="text" id="lf-company" class="form-input" placeholder="Công ty TNHH ABC...">
         
-        <label class="form-label">Hình ảnh đại diện (Tải lên tùy chọn)</label>
+        <label class="form-label">Hình ảnh đại diện (tùy chọn)</label>
         <input type="file" id="lf-photo" class="form-input" accept="image/*" style="padding-top:10px;">
         
-        <!-- Bẫy Honeypot chặn Spam Bot -->
+        <!-- Honeypot chống Spam Bot -->
         <div style="display:none; visibility:hidden; position:absolute; left:-9999px;">
-          <label>Vui lòng để trống ô này</label>
           <input type="text" id="lf-sp-trap" name="contact-qwe-123" tabindex="-1" autocomplete="off">
         </div>
         
@@ -914,155 +913,342 @@
   <!-- Floating particles -->
   <div class="particles-container" id="particles"></div>
 
-  <div class="wrapper" style="padding-bottom: 40px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
-    <style>
-      .poster-card {
-        background: var(--white);
-        max-width: 700px;
-        width: 100%;
-        margin: 20px auto;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        position: relative;
-        font-family: inherit;
-        z-index: 2;
-      }
-      .poster-header { text-align: center; margin-bottom: 20px; border-bottom: 1.5px solid var(--red); padding-bottom: 15px;}
-      .ph-logo { font-size: 20px; font-weight: 900; color: var(--red); letter-spacing: 2px; }
-      .ph-title { font-size: 28px; font-weight: 900; color: var(--red); margin-top: 10px; line-height: 1.2;}
-      .ph-title .script-font { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; font-size: 24px; color: #888; display:block; margin-bottom: 5px; }
-      .ph-sub { text-align: center; font-size: 15px; color: #333; font-weight: 600; margin-bottom: 15px; line-height: 1.5; }
-      .ph-benefits { text-align: center; font-size: 13px; color: #444; margin-bottom: 25px; line-height: 1.6; max-width: 550px; margin-left: auto; margin-right: auto;}
-      
-      .ph-details { display: flex; justify-content: center; gap: 30px; margin-bottom: 25px; }
-      .ph-col { text-align: left; }
-      .ph-col-title { font-size: 16px; font-weight: 800; color: var(--red); margin-bottom: 6px; border-bottom: 1.5px solid var(--red); display: inline-block;}
-      .ph-col-content { font-size: 14px; color: #333; line-height: 1.5; margin-top: 8px;}
-      .ph-divider { width: 1px; background: #ddd; }
-      
-      .ph-speaker { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 30px; background: var(--cream); padding: 15px; border-radius: 12px;}
-      .ph-speaker-img { width: 100px; height: 100px; border-radius: 50%; background: #ccc; border: 3px solid var(--red); display:flex; align-items:center; justify-content:center; overflow:hidden; flex-shrink:0;}
-      .ph-speaker-img img { width: 100%; height: 100%; object-fit: cover; }
-      .ph-speaker-info { text-align: left; }
-      .ph-sp-label { font-size: 14px; font-weight: 700; color: #333; }
-      .ph-sp-title { font-size: 20px; font-weight: 800; color: var(--red); line-height: 1.3; margin: 4px 0 8px; }
-      .ph-sp-name { font-size: 13px; font-weight: 600; color: #333; letter-spacing: 0.5px; }
-      .ph-sp-name strong { font-size: 14px; color: var(--red); }
+  <style>
+    /* ===== NAMECARD / INVITATION CARD STYLE ===== */
+    #invitation-card {
+      display: none;
+      max-width: 480px;
+      margin: 30px auto 0;
+      background: linear-gradient(170deg, #9B0000 0%, #CC1D1D 45%, #9B0000 100%);
+      border-radius: 20px;
+      padding: 36px 28px 40px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+      box-shadow: 0 20px 60px rgba(204,29,29,0.4);
+    }
+    #invitation-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .ic-brand {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2px;
+    }
+    .ic-sub {
+      font-size: 11px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 18px;
+    }
+    .ic-script {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 24px;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .ic-photo-ring {
+      width: 140px; height: 140px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.7);
+      box-shadow: 0 0 0 8px rgba(255,255,255,0.15), 0 0 40px rgba(255,255,255,0.2);
+      overflow: hidden;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ic-photo-ring img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .ic-photo-placeholder {
+      font-size: 50px; opacity: 0.5;
+    }
+    .ic-greeting {
+      font-size: 14px; color: rgba(255,255,255,0.75);
+      margin-bottom: 6px;
+    }
+    .ic-name {
+      font-size: 22px; font-weight: 900;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .ic-company {
+      font-size: 14px; color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
 
-      .ph-footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; border-top: 1px solid #ddd; padding-top: 15px; }
-      .ph-footer-grid h4 { font-size: 12px; font-weight: 800; color: var(--red); margin-bottom: 8px; text-transform: uppercase;}
-      .ph-list { list-style: none; font-size: 11px; color: #444; padding:0; line-height: 1.6; display:flex; flex-direction:column; gap:6px;}
-      .ph-list li { position: relative; padding-left: 10px; }
-      .ph-list li::before { content: '•'; position: absolute; left: 0; color: var(--red); }
-      .ph-contact { font-size: 11px; color: #444; line-height: 1.5; margin-bottom: 6px; }
+    /* ===== LIGHTBOX ===== */
+    #lightbox {
+      display: none;
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.92);
+      z-index: 99999;
+      align-items: center; justify-content: center;
+      cursor: zoom-out;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 92vw; max-height: 92vh;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      animation: lbPop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes lbPop {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox-close {
+      position: absolute; top: 20px; right: 24px;
+      color: white; font-size: 32px; cursor: pointer;
+      font-weight: 300; line-height: 1;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    #lightbox-close:hover { opacity: 1; }
 
-      .ph-meeting-number { position: absolute; bottom: 20px; right: 30px; width: 50px; height: 50px; background: var(--red); border-radius: 50%; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; box-shadow: 0 4px 10px rgba(204,29,29,0.3); }
+    /* Toast */
+    .toast { position: fixed; bottom: -60px; left: 50%; transform: translateX(-50%); background: #1a1a2e; color: white; padding: 16px 24px; border-radius: 8px; font-weight: 500; font-size: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 99999; transition: bottom 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28); white-space: nowrap; }
+    .toast.show { bottom: 30px; }
+  </style>
 
-      /* Responsive */
-      @media(max-width: 600px) {
-        .ph-details { flex-direction: column; gap: 15px; text-align: center; }
-        .ph-col { text-align: center; }
-        .ph-divider { display: none; }
-        .ph-speaker { flex-direction: column; text-align: center; gap: 10px; }
-        .ph-speaker-info { text-align: center;}
-        .ph-footer-grid { grid-template-columns: 1fr; gap: 15px; text-align: center; }
-        .ph-list { justify-content: center;}
-        .ph-list li { padding-left: 0; }
-        .ph-list li::before { display: none; }
-        .ph-meeting-number { position: static; margin: 20px auto 0; }
-        .poster-card { padding: 20px; margin-top: 50px;}
-      }
-    </style>
+  <!-- LIGHTBOX OVERLAY -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close" onclick="closeLightbox()">✕</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
 
-    <div style="width:100%; max-width: 700px; padding: 0 16px;">
-      <!-- ===== PERSONALIZED HERO ===== -->
-      <div id="personalized-hero" style="display:none; text-align:center; padding: 40px 20px 20px; background:var(--white); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin: 60px auto 30px; position:relative; z-index:2;">
-        <div style="width:100px; height:100px; border-radius:50%; margin: -90px auto 15px; border:4px solid var(--red); background:#ccc; overflow:hidden; box-shadow: 0 8px 24px rgba(204,29,29,0.3); position: relative; z-index: 3;">
-           <img id="ph-avatar" src="https://ui-avatars.com/api/?name=Guest&background=CC1D1D&color=fff&size=150" style="width:100%; height:100%; object-fit:cover;" alt="Avatar">
-        </div>
-        <h2 style="font-size:24px; font-weight:900; color:var(--text); line-height:1.2; margin-bottom: 10px;">Cảm ơn Anh/Chị <br><span id="ph-name" style="color:var(--red);"></span>!</h2>
-        <p style="font-size:15px; color:#555; margin-top:5px; margin-bottom:0; line-height: 1.6;">Chào mừng đại diện từ <strong id="ph-company-name">...</strong> đến với sự kiện.<br>Thư mời chi tiết sẽ được tự động gửi tới email: <br><strong id="ph-email" style="color:var(--red);">...</strong> của Anh/Chị.</p>
+  <div class="wrapper" style="padding-bottom: 40px;">
+
+    <!-- ===== INVITATION NAMECARD (hiện sau khi điền form) ===== -->
+    <div id="invitation-card">
+      <div class="ic-brand">BEST CHAPTER</div>
+      <div class="ic-sub">Kết Nối Doanh Nhân</div>
+      <div class="ic-script">Trân Trọng Kính Mời</div>
+      <div class="ic-photo-ring">
+        <div class="ic-photo-placeholder" id="ic-photo-placeholder">👤</div>
+        <img id="ic-photo-img" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover;">
       </div>
-
-      <!-- POSTER CARD -->
-      <div class="poster-card reveal" style="opacity: 1; transform: translateY(0);">
-        <div class="poster-header">
-          <div class="ph-logo">CỘNG ĐỒNG DOANH NHÂN</div>
-          <div class="ph-title"><span class="script-font">Thư Mời</span> KẾT NỐI KINH DOANH</div>
-        </div>
-        
-        <div class="ph-sub">
-          Kính mời Anh/Chị<br>Tham dự sự kiện định kỳ của Cộng Đồng Doanh Nhân
-        </div>
-
-        <div class="ph-benefits">
-          Kết nối mở rộng mối quan hệ chất lượng với hơn 70 chủ doanh nghiệp.<br>Cơ hội quảng bá về ngành nghề kinh doanh của doanh nghiệp mình.<br>Gia tăng doanh số thông qua các mô hình marketing trực tiếp hiệu quả.
-        </div>
-
-        <div class="ph-details">
-          <div class="ph-col">
-            <h3 class="ph-col-title">Thời gian</h3>
-            <div class="ph-col-content">
-              Sự kiện diễn ra vào lúc<br>
-              <strong>06:30 - 09:00, Thứ Tư</strong><br>
-              <span id="event-date-display-poster">Ngày 01 tháng 04 năm 2026</span>
-            </div>
-          </div>
-          <div class="ph-divider"></div>
-          <div class="ph-col">
-            <h3 class="ph-col-title">Địa điểm</h3>
-            <div class="ph-col-content">
-              <a href="https://maps.google.com/?q=AQUA+JARDIN+307+Nơ+Trang+Long+Phường+Bình+Lợi+Trung+TP+HCM" target="_blank" style="color:#0056b3; text-decoration:underline;"><strong>AQUA JARDIN 📍</strong></a><br>
-              307 Nơ Trang Long, Phường<br>
-              Bình Lợi Trung, Tp. Hồ Chí Minh
-            </div>
-          </div>
-        </div>
-
-        <div class="ph-speaker">
-          <div class="ph-speaker-img">
-            <img src="https://ui-avatars.com/api/?name=H%C6%B0%E1%BB%9Dng&background=CC1D1D&color=fff&size=150" alt="Speaker" id="speaker-img">
-          </div>
-          <div class="ph-speaker-info">
-            <span class="ph-sp-label">Chủ Đề</span>
-            <h2 class="ph-sp-title">Bí Mật Kinh doanh<br>Sức Khỏe Làm Đẹp thời 5.0</h2>
-            <div class="ph-sp-name">SPEAKER: <strong>NGUYỄN THỊ HƯỜNG</strong><br>CÔNG TY TNHH BIG EMPIRE</div>
-          </div>
-        </div>
-
-        <div class="ph-footer-grid">
-          <div>
-            <h4>Lịch trình sự kiện</h4>
-            <ul class="ph-list">
-              <li><strong>06:30 - 07:00:</strong> Giao lưu cà phê</li>
-              <li><strong>07:00 - 08:45:</strong> Chia sẻ kỹ năng kết nối, giới thiệu doanh nghiệp, bài thuyết trình chính</li>
-              <li><strong>08:45 - 09:00:</strong> Kết thúc, giao lưu</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Lưu ý tham dự</h4>
-            <ul class="ph-list">
-              <li>Trang phục lịch sự, chuyên nghiệp</li>
-              <li>Có mặt trước 06:30</li>
-              <li>Mang theo danh thiếp</li>
-              <li>Phí phòng họp & ăn sáng: 300K</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Liên hệ đăng ký</h4>
-            <p class="ph-contact">Khách mời: Hoàng Thị Thùy Linh<br>SĐT: 0985.508.979</p>
-            <p class="ph-contact">Thư Ký: Nguyễn Thị Hiền<br>SĐT: 0976.900.494</p>
-          </div>
-        </div>
-
-        <div class="ph-meeting-number" id="meeting-num-poster">...</div>
-      </div>
+      <div class="ic-name" id="ic-name">NGUYỄN VĂN A</div>
+      <div class="ic-company" id="ic-company">Công ty TNHH ABC</div>
     </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero reveal">
+      <div class="bni-logo reveal">
+        <div class="bni-logo-badge">
+          <div class="bni-text" style="font-size: 64px;">BEST <span>CHAPTER</span></div>
+        </div>
+        <div class="meeting-badge">KẾT NỐI KINH DOANH</div>
+      </div>
+      
+      <div class="hero-label">Kính mời Anh/Chị tham dự</div>
+      <h1 class="hero-title">
+        Sự kiện định kỳ 
+        <span id="meeting-num" style="display:inline-block; color:#FFD700; font-family:'Playfair Display', serif; font-style:italic; margin-left:8px; font-size: 1.2em;">94</span>
+      </h1>
+      <p class="hero-subtitle">Mở rộng mối quan hệ và gia tăng doanh số thông qua các cơ hội học hỏi.</p>
+      
+      <div class="hero-date-pill">
+        <div class="dot"></div>
+        <span id="event-date-display">Đang cập nhật...</span>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section reveal" id="countdown">
+      <div class="countdown-label">Sự kiện sẽ bắt đầu sau</div>
+      <div class="countdown-grid">
+        <div class="countdown-item"><div class="countdown-value" id="cd-days">00</div><div class="countdown-unit">Ngày</div></div>
+        <div class="countdown-item"><div class="countdown-value" id="cd-hours">00</div><div class="countdown-unit">Giờ</div></div>
+        <div class="countdown-item"><div class="countdown-value" id="cd-mins">00</div><div class="countdown-unit">Phút</div></div>
+        <div class="countdown-item"><div class="countdown-value" id="cd-secs">00</div><div class="countdown-unit">Giây</div></div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section reveal">
+      <div class="section-inner">
+        <h2 class="section-title">Giá trị nhận được</h2>
+        <h3 class="section-heading">Tại sao bạn nên tham gia?</h3>
+        <ul class="benefit-list">
+          <li class="benefit-item"><div class="benefit-icon">🤝</div><div class="benefit-text"><strong>Mở rộng mối quan hệ:</strong> Gặp gỡ hơn 70 chủ doanh nghiệp uy tín.</div></li>
+          <li class="benefit-item"><div class="benefit-icon">📢</div><div class="benefit-text"><strong>Quảng bá doanh nghiệp:</strong> Cơ hội giới thiệu sản phẩm, dịch vụ trực tiếp.</div></li>
+          <li class="benefit-item"><div class="benefit-icon">📈</div><div class="benefit-text"><strong>Tăng trưởng doanh thu:</strong> Gia tăng khách hàng thông qua networking & referral.</div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- LOCATION & TIME -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section-inner">
+        <h2 class="section-title">Thông tin</h2>
+        <h3 class="section-heading">Thời gian & Địa điểm</h3>
+        <div class="info-grid">
+          <div class="info-col">
+            <div class="info-col-title">⏰ Thời gian</div>
+            <div class="info-col-main">06:30 - 09:00</div>
+            <div class="info-col-sub">Thứ Tư mỗi tuần</div>
+          </div>
+          <div class="info-divider"></div>
+          <div class="info-col">
+            <div class="info-col-title">📍 Địa điểm</div>
+            <div class="info-col-main">AQUA JARDIN</div>
+            <div class="info-col-sub">307 Nơ Trang Long, Bình Lợi Trung, Tp. HCM</div>
+            <a href="https://maps.google.com/?q=AQUA+JARDIN+307+No+Trang+Long+Ho+Chi+Minh" target="_blank" class="map-btn">🗺️ Xem Bản Đồ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPEAKER / CMS -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section-inner" style="background: var(--cream); border: 2px solid rgba(204,29,29,0.15);">
+        <h2 class="section-title" style="text-align:center;">Tâm Điểm Sự Kiện</h2>
+        <h3 class="section-heading" style="text-align:center;">Bài Chia Sẻ 10 Phút</h3>
+        <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:20px;">
+          <div style="width:110px; height:110px; border-radius:50%; background:#ddd; border:4px solid var(--red); overflow:hidden; flex-shrink:0;">
+            <img src="https://ui-avatars.com/api/?name=Hu%E1%BB%9Dng&background=CC1D1D&color=fff&size=150" alt="Speaker" id="speaker-img" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div style="text-align:left; max-width:280px;">
+            <span style="font-size:12px; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:1px;">Chủ Đề</span>
+            <h4 id="sp-topic" style="font-size:18px; font-weight:800; color:var(--red); line-height:1.3; margin:6px 0 10px;">Bí Mật Kinh doanh<br>Sức Khỏe Làm Đẹp thời 5.0</h4>
+            <div id="sp-name" style="font-size:13px; font-weight:600; color:#333; line-height:1.6;">SPEAKER: <strong style="color:var(--red); font-size:14px;">NGUYỄN THỊ HƯỜNG</strong><br>CÔNG TY TNHH BIG EMPIRE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section-inner">
+        <h2 class="section-title">Agenda</h2>
+        <h3 class="section-heading">Lịch trình chi tiết</h3>
+        <ul class="schedule-list">
+          <li class="schedule-item">
+            <div class="schedule-time">06:30</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">Đón khách & Giao lưu mở</div>
+              <ul class="schedule-items"><li>Networking tự do, Ăn sáng & Cà phê</li></ul>
+            </div>
+          </li>
+          <li class="schedule-item">
+            <div class="schedule-time">07:00</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">Phần chính sự kiện</div>
+              <ul class="schedule-items"><li>Giới thiệu 60 giây từng doanh nghiệp</li><li>Trao đổi cơ hội kinh doanh (Referrals)</li></ul>
+            </div>
+          </li>
+          <li class="schedule-item">
+            <div class="schedule-time">08:00</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">Bài chia sẻ 10 phút</div>
+              <ul class="schedule-items"><li>Thuyết trình chính & Hỏi đáp</li></ul>
+            </div>
+          </li>
+          <li class="schedule-item">
+            <div class="schedule-time">08:45</div>
+            <div class="schedule-dot"></div>
+            <div class="schedule-content">
+              <div class="schedule-phase">Bế mạc</div>
+              <ul class="schedule-items"><li>Giao lưu sau sự kiện</li></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section-inner">
+        <h2 class="section-title">Chuẩn bị</h2>
+        <h3 class="section-heading">Lưu ý khi tham dự</h3>
+        <div class="notes-grid">
+          <div class="note-item"><div class="note-emoji">👔</div><div class="note-text"><strong>Trang phục</strong>Lịch sự, chuyên nghiệp (Business Casual / Vest).</div></div>
+          <div class="note-item"><div class="note-emoji">🪪</div><div class="note-text"><strong>Nhận diện</strong>Mang theo <strong>danh thiếp (Namecard)</strong> thật nhiều để trao đổi.</div></div>
+          <div class="note-item"><div class="note-emoji">☕</div><div class="note-text"><strong>Chi phí</strong>Phí tham dự (phòng họp & điểm tâm sáng) là <strong>300.000 VNĐ</strong>.</div></div>
+          <div class="note-item"><div class="note-emoji">⏰</div><div class="note-text"><strong>Thời gian</strong>Vui lòng đến sớm trước 06:30 để có nhiều thời gian giao lưu.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY (ảnh thực) -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section-inner">
+        <h2 class="section-title">Khoảnh khắc</h2>
+        <h3 class="section-heading">Hình ảnh sự kiện</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/DSC06709.jpg" alt="Sự kiện BNI #1" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/IMG_5157.JPG" alt="Sự kiện BNI #2" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/IMG_5177.JPG" alt="Sự kiện BNI #3" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/IMG_5182.JPG" alt="Sự kiện BNI #4" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/IMG_5184.JPG" alt="Sự kiện BNI #5" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/IMG_5906.JPG" alt="Sự kiện BNI #6" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/MIS00700.jpg" alt="Sự kiện BNI #7" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5100.jpeg" alt="Sự kiện BNI #8" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5117.jpeg" alt="Sự kiện BNI #9" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5135.jpeg" alt="Sự kiện BNI #10" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5144.jpeg" alt="Sự kiện BNI #11" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5145.jpeg" alt="Sự kiện BNI #12" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5248.jpeg" alt="Sự kiện BNI #13" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5322.jpeg" alt="Sự kiện BNI #14" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5331.jpeg" alt="Sự kiện BNI #15" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5354.jpeg" alt="Sự kiện BNI #16" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5365.jpeg" alt="Sự kiện BNI #17" loading="lazy"></div>
+<div class="gallery-item" onclick="openLightbox(this)"><img src="assets/images/_DSC5388.jpeg" alt="Sự kiện BNI #18" loading="lazy"></div>
+        </div>
+        <p style="text-align:center; font-size:12px; color:var(--gray); margin-top:14px;">Bấm vào ảnh để xem toàn màn hình</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section reveal" style="padding-top: 0;">
+      <div class="section-inner">
+        <h2 class="section-title">Hỗ trợ</h2>
+        <h3 class="section-heading">Liên hệ ban tổ chức</h3>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-avatar">👩‍💼</div>
+            <div><div class="contact-role">Khách mời</div><div class="contact-name">Hoàng Thị Thùy Linh</div><div class="contact-phone"><a href="tel:0985508979">0985.508.979</a></div></div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-avatar">👩‍💻</div>
+            <div><div class="contact-role">Thư ký</div><div class="contact-name">Nguyễn Thị Hiền</div><div class="contact-phone"><a href="tel:0976900494">0976.900.494</a></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-logo">
+        <div class="footer-bni">BEST CHAPTER</div>
+        <div class="footer-best">DOANH NHÂN KẾT NỐI</div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-text">Giao lưu kết nối, vươn tầm cao mới.</p>
+      <div class="footer-copy">© 2026. All rights reserved.</div>
+    </footer>
+
   </div><!-- end .wrapper -->
 
   <script>
-    // ===== PARTICLES =====
+    // ===== 1. PARTICLES =====
     (function() {
       const container = document.getElementById('particles');
       for (let i = 0; i < 15; i++) {
@@ -1076,221 +1262,204 @@
       }
     })();
 
-    // ===== COUNTDOWN & EVENT DATE =====
+    // ===== 2. COUNTDOWN & EVENT DATE =====
     (function() {
       function getNextWednesday() {
-        // Build: next Wednesday 06:30 VN
         const wednesdayVN = new Date();
         const diffDays = (3 - new Date().getDay() + 7) % 7 || (new Date().getHours() < 6 || (new Date().getHours() === 6 && new Date().getMinutes() < 30) ? 0 : 7);
         wednesdayVN.setDate(new Date().getDate() + diffDays);
         wednesdayVN.setHours(6, 30, 0, 0);
         return wednesdayVN;
       }
-
-      function updateEventDateUI(targetDate) {
-        const dd = String(targetDate.getDate()).padStart(2, '0');
-        const mm = String(targetDate.getMonth() + 1).padStart(2, '0');
-        const yyyy = targetDate.getFullYear();
-        
-        const posterDate = document.getElementById('event-date-display-poster');
-        if (posterDate) {
-          posterDate.innerHTML = 'Ngày ' + dd + ' tháng ' + mm + ' năm ' + yyyy;
-        }
-      }
-
       const targetDateObj = getNextWednesday();
 
-      // Cập nhật số thứ tự sự kiện tự động
-      const baseDate = new Date(2026, 3, 1, 6, 30, 0, 0); // Ngày 1 tháng 4 năm 2026 (Buổi 94)
-      const diffWeeks = Math.round((targetDateObj.getTime() - baseDate.getTime()) / (7 * 24 * 60 * 60 * 1000));
-      const meetingNumber = 94 + diffWeeks;
+      const dd = String(targetDateObj.getDate()).padStart(2,'0');
+      const mm = String(targetDateObj.getMonth()+1).padStart(2,'0');
+      const yyyy = targetDateObj.getFullYear();
+      const d = document.getElementById('event-date-display');
+      if(d) d.innerHTML = 'Thứ Tư, ' + dd + '/' + mm + '/' + yyyy;
 
-      const numSpanPoster = document.getElementById('meeting-num-poster');
-      if (numSpanPoster) numSpanPoster.textContent = meetingNumber;
+      const baseDate = new Date(2026, 3, 1, 6, 30, 0, 0);
+      const diffWeeks = Math.round((targetDateObj.getTime() - baseDate.getTime()) / (7*24*60*60*1000));
+      const numSpan = document.getElementById('meeting-num');
+      if(numSpan) numSpan.textContent = 94 + diffWeeks;
 
-      updateEventDateUI(targetDateObj);
-
+      function pad(n) { return String(n).padStart(2,'0'); }
+      function update() {
+        const diff = targetDateObj.getTime() - Date.now();
+        if(diff <= 0 && diff > -3600000*2.5) {
+          document.getElementById('countdown').innerHTML = '<p class="countdown-expired">🎉 Sự kiện đang diễn ra!</p>';
+          return;
+        }
+        if(diff <= -3600000*2.5) { window.location.reload(); return; }
+        const days = Math.floor(diff/86400000);
+        const h = Math.floor((diff%86400000)/3600000);
+        const m = Math.floor((diff%3600000)/60000);
+        const s = Math.floor((diff%60000)/1000);
+        const el = document.getElementById('cd-days');
+        if(el) {
+          el.textContent = pad(days);
+          document.getElementById('cd-hours').textContent = pad(h);
+          document.getElementById('cd-mins').textContent = pad(m);
+          document.getElementById('cd-secs').textContent = pad(s);
+        }
+      }
+      update();
+      setInterval(update, 1000);
     })();
 
-    // ===== REVEAL ON SCROLL =====
+    // ===== 3. REVEAL ON SCROLL =====
     (function() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-          }
+          if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     })();
 
+    // ===== 4. FORM SUBMIT + PERSONALIZATION + WEBHOOK =====
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwjiHCwHLjSHM5aPuUCo8E34wihIpEpDnJX53akvDFfg1Xp2otuBkvz7TgYGQ3PoC_l_w/exec';
 
-
-
-    // ===== LANDING FORM & PERSONALIZATION =====
     document.getElementById('landing-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Tracking sự kiện CompleteRegistration trên FB Pixel
-      if(typeof fbq === 'function') {
-        fbq('track', 'CompleteRegistration');
-      }
+      const honeypot = document.getElementById('lf-sp-trap').value;
+      if(honeypot) return;
 
       const btn = document.getElementById('lf-submit-btn');
-      btn.textContent = '⏳ ĐANG XỬ LÝ...';
+      btn.textContent = '⏳ ĐANG GỬI...';
       btn.disabled = true;
-
-      // Kiểm tra bẫy Honeypot
-      const honeypot = document.getElementById('lf-sp-trap').value;
-      if (honeypot) {
-        console.warn('Bot spam detected.');
-        btn.textContent = '✅ ĐĂNG KÝ THÀNH CÔNG!'; // Đánh lừa bot
-        return; 
-      }
 
       const name = document.getElementById('lf-name').value.trim();
       const phone = document.getElementById('lf-phone').value.trim();
       const email = document.getElementById('lf-email').value.trim();
-      const company = document.getElementById('lf-company').value.trim() || 'Doanh nghiệp của bạn';
+      const company = document.getElementById('lf-company').value.trim() || 'Khách mời';
       const fileInput = document.getElementById('lf-photo');
       const file = fileInput.files[0];
 
-      if (file) {
+      if(typeof fbq === 'function') fbq('track', 'CompleteRegistration');
+
+      if(file) {
         const reader = new FileReader();
         reader.onload = function(ev) {
-          const base64Data = ev.target.result;
-          finishRegistration(name, phone, email, company, base64Data);
+          processSubmit(name, phone, email, company, ev.target.result);
         };
         reader.readAsDataURL(file);
       } else {
-        finishRegistration(name, phone, email, company, null);
+        processSubmit(name, phone, email, company, null);
       }
     });
 
-    function finishRegistration(name, phone, email, company, photoBase64) {
-      // 1. Gửi data lên Google Apps Script (Webhook)
-      const dataPayload = { name, phone, email, company, photo: photoBase64 };
-      
-      // >>> ĐÃ TÍCH HỢP WEBHOOK GOOGLE CỦA SẾP BẠN <<<
-      // (Bảo mật: Mã hóa Base64 URL để tránh bị bot thu thập)
-      const _0xUrl = 'aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3amlIQ3dITGpTSE01YVB1VUNvOEUzNHdpaElwRXBEbkpYNTNha3ZERmZnMVhwMm90dUJrdno3VGdZR1EzUG9DX2xfdy9leGVj';
-      
-      fetch(atob(_0xUrl), { 
-        method: 'POST', 
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8'
-        },
-        body: JSON.stringify(dataPayload) 
-      }).then(response => response.json())
-        .then(data => console.log('Thành công:', data))
-        .catch(e => console.log('Lỗi gửi data:', e));
+    function processSubmit(name, phone, email, company, photoBase64) {
+      // Gửi về webhook Apps Script ngay lập tức
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ name, phone, email, company, photo: photoBase64 })
+      }).then(r => r.json())
+        .then(d => console.log('Webhook OK:', d))
+        .catch(err => console.log('Webhook error (non-blocking):', err));
 
-      // 2. Ẩn cổng đăng ký
+      // Hiển thị Invitation Card cá nhân
       document.getElementById('welcome-gate').style.opacity = '0';
       setTimeout(() => {
         document.getElementById('welcome-gate').style.display = 'none';
-        
-        // 3. Hiển thị khu vực Cá nhân hóa
-        const heroBlock = document.getElementById('personalized-hero');
-        if(heroBlock) heroBlock.style.display = 'block';
-        
-        const phName = document.getElementById('ph-name');
-        if(phName) phName.textContent = name || 'Khách Mời';
-        
-        const phEmail = document.getElementById('ph-email');
-        if(phEmail) phEmail.textContent = email;
 
-        const phCompany = document.getElementById('ph-company-name');
-        if(phCompany) phCompany.textContent = company || 'Doanh nghiệp của bạn';
+        // Điền thông tin vào thẻ mời
+        document.getElementById('ic-name').textContent = name.toUpperCase();
+        document.getElementById('ic-company').textContent = company;
 
-        const phAvatar = document.getElementById('ph-avatar');
-        if(phAvatar) {
-           phAvatar.src = photoBase64 ? photoBase64 : `https://ui-avatars.com/api/?name=${encodeURIComponent(name || 'KM')}&background=CC1D1D&color=fff&size=150`;
+        if(photoBase64) {
+          document.getElementById('ic-photo-placeholder').style.display = 'none';
+          const img = document.getElementById('ic-photo-img');
+          img.src = photoBase64;
+          img.style.display = 'block';
         }
 
-        // Khởi động lại Scroll Reveal vì mới xoá overlay
+        const card = document.getElementById('invitation-card');
+        card.style.display = 'block';
+
         window.scrollTo(0, 0);
-
-        // 4. Báo Toast
-        let t2 = document.getElementById('toast');
-        if(!t2) {
-           t2 = document.createElement('div');
-           t2.id = 'toast'; 
-           t2.className = 'toast';
-           document.body.appendChild(t2);
-        }
-        t2.textContent = '✅ Đăng ký thành công! Vui lòng kiểm tra Email.';
-        t2.classList.add('show');
-        setTimeout(() => t2.classList.remove('show'), 6000);
+        showToast('✅ Đã gửi đăng ký! Đang tải thư mời...');
       }, 500);
     }
 
-    // ===== CMS: CẬP NHẬT DIỄN GIẢ TỪ GOOGLE SHEETS CSV =====
+    // ===== 5. GALLERY LIGHTBOX =====
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if(e.key === 'Escape') closeLightbox();
+    });
+
+    // ===== 6. TOAST =====
+    function showToast(msg) {
+      let t = document.getElementById('toast');
+      if(!t) {
+        t = document.createElement('div');
+        t.id = 'toast'; t.className = 'toast';
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 6000);
+    }
+
+    // ===== 7. GOOGLE SHEETS CMS SPEAKER =====
     (function() {
-      // 1. Dán đường link tải CSV từ bảng tính Google Sheets của bạn vào đây:
       const CMS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeZOZkkus3PIv-QuhZTT83J9_C3WYGC7rhzg_DyiAaBkn0nE0Ec7nqU-AGkkHz8a06aUK9AR8pliT4/pub?gid=0&single=true&output=csv';
-
-      if (!CMS_CSV_URL) return; // Nếu chưa có link thì dùng dữ liệu gõ sẵn
-
-      function parseCSV(str) {
+      
+      function getCSVRows(csv) {
         const rows = [];
-        let currentRow = [];
-        let currentVal = '';
+        let row = [];
+        let cur = '';
         let inQuotes = false;
-        for (let i = 0; i < str.length; i++) {
-          const char = str[i];
-          const nextChar = str[i+1];
-          // Handle escaped quotes
-          if (char === '"' && nextChar === '"') {
-            currentVal += '"';
-            i++;
+        for (let i = 0; i < csv.length; i++) {
+          const char = csv[i];
+          const next = csv[i+1];
+          if (inQuotes && char === '"' && next === '"') {
+            cur += '"'; i++;
           } else if (char === '"') {
             inQuotes = !inQuotes;
-          } else if (char === ',' && !inQuotes) {
-            currentRow.push(currentVal.trim());
-            currentVal = '';
-          } else if ((char === '\n' || (char === '\r' && nextChar === '\n')) && !inQuotes) {
-            if (char === '\r') i++; // Skip \n
-            currentRow.push(currentVal.trim());
-            rows.push(currentRow);
-            currentRow = [];
-            currentVal = '';
+          } else if (!inQuotes && char === ',') {
+            row.push(cur.trim()); cur = '';
+          } else if (!inQuotes && (char === '\n' || char === '\r')) {
+            if (cur !== '' || row.length > 0) {
+              row.push(cur.trim()); rows.push(row); row = []; cur = '';
+            }
+            if (char === '\r' && next === '\n') i++;
           } else {
-            currentVal += char;
+            cur += char;
           }
         }
-        // đẩy giá trị cuối cùng
-        currentRow.push(currentVal.trim());
-        if (currentRow.length > 0) rows.push(currentRow);
+        if (cur !== '' || row.length > 0) {
+          row.push(cur.trim()); rows.push(row);
+        }
         return rows;
       }
 
       fetch(CMS_CSV_URL)
-        .then(res => res.text())
-        .then(csvData => {
-           const rows = parseCSV(csvData);
-           if (rows.length < 2) return; // Phải có ít nhất 1 dòng tiêu đề và 1 dòng dữ liệu
-           
-           const data = rows[1]; 
-           if (data.length >= 4) {
-              const imgUrl = data[0];
-              const topic = data[1].replace(/\n/g, '<br>'); // Cho phép xuống dòng trong tiêu đề
-              const spkName = data[2];
-              const company = data[3];
-
-              // Nếu imgUrl không phải là link http mà chỉ là tên file vớ vẩn, ta bỏ qua không hỏng avatar gốc
-              if (imgUrl.length > 5 && imgUrl.startsWith('http')) {
-                document.getElementById('speaker-img').src = imgUrl;
-              }
-              if (topic) {
-                document.querySelector('.ph-sp-title').innerHTML = topic;
-              }
-              if (spkName) document.querySelector('.ph-sp-name strong').textContent = spkName;
-              if (company) document.querySelector('.ph-sp-name').innerHTML = `SPEAKER: <strong>${spkName}</strong><br>${company}`;
-           }
+        .then(r => r.text())
+        .then(csv => {
+          const rows = getCSVRows(csv);
+          if(rows.length < 2) return;
+          const data = rows[1]; // First data row after header
+          const [imgUrl, topic, spkName, spkCompany] = data;
+          if(imgUrl) document.getElementById('speaker-img').src = imgUrl;
+          if(topic) document.getElementById('sp-topic').innerHTML = topic.replace(/\n/g,'<br>');
+          if(spkName || spkCompany) {
+            document.getElementById('sp-name').innerHTML =
+              `SPEAKER: <strong style="color:var(--red); font-size:14px;">${spkName}</strong><br>${spkCompany}`;
+          }
         })
-        .catch(err => console.log('Chưa liên kết CMS Diễn giả hoặc Tệp lỗi', err));
+        .catch(err => console.log('CMS Error:', err));
     })();
   </script>
 </body>
