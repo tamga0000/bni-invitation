@@ -465,8 +465,7 @@ new_body = f"""
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }})();
 
-    // ===== 4. FORM SUBMIT + PERSONALIZATION + WEBHOOK =====
-    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwjiHCwHLjSHM5aPuUCo8E34wihIpEpDnJX53akvDFfg1Xp2otuBkvz7TgYGQ3PoC_l_w/exec';
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyAxSNFdzIisxksv0fmemkYqLoAX_naV3GQkbSYuibFRidU5edRFKooTpHKSTmFQf9k/exec';
 
     document.getElementById('landing-form').addEventListener('submit', function(e) {{
       e.preventDefault();
