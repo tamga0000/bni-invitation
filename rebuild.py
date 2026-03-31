@@ -21,6 +21,10 @@ gallery_items = '\n'.join([
 ])
 
 new_body = f"""
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPT7K878"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- ===== WELCOME GATE ===== -->
   <div id="welcome-gate" class="welcome-gate">
