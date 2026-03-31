@@ -385,6 +385,19 @@ new_body = f"""
       </div>
     </section>
 
+    <!-- ZALO GROUP -->
+    <section class="section reveal" style="padding-top: 0; padding-bottom: 40px;">
+      <div class="section-inner" style="background: white; border-radius: 20px; padding: 40px 20px; text-align: center; border: 1px dashed #CC1D1D; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <div style="font-size: 40px; margin-bottom: 15px;">🎁</div>
+        <p style="font-size: 16px; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto 25px auto; font-weight: 500;">
+          Ngoài các mối quan hệ chất lượng ra thì chúng tôi có rất nhiều quà tặng để các chủ doanh nghiệp có thể áp dụng để gia tăng doanh thu được cập nhật liên tục trong nhóm Zalo, hãy bấm nút tham gia nhóm bên dưới để được cập nhật liên tục nhé..
+        </p>
+        <a href="https://zalo.me/g/oazz1lqve1v4hi40ts3z" target="_blank" class="submit-btn" style="display: inline-block; width: auto; padding: 15px 40px; background: #0068FF; text-decoration: none; border-radius: 10px; font-weight: bold; color: white;">
+          📲 THAM GIA NHÓM ZALO
+        </a>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-logo">
