@@ -213,9 +213,7 @@ new_body = f"""
     <!-- HERO SECTION -->
     <section class="hero reveal">
       <div class="bni-logo reveal">
-        <div class="bni-logo-badge">
-          <div class="bni-text" style="font-size: 64px;">BEST <span>CHAPTER</span></div>
-        </div>
+        <img src="logo.png" alt="Best Chapter Logo" style="width: 200px; height: auto; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));">
         <div class="meeting-badge">CỘNG ĐỒNG CHỦ DOANH NGHIỆP TẠI HỒ CHÍ MINH</div>
       </div>
       
